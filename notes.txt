@@ -1,0 +1,11 @@
+56f279a51ec948368257ec606e5cd69c
+
+
+gitlab使用详解
+https://www.jianshu.com/p/4b2d9d0f2713
+
+2019 年总结 - Jenkins 精华版
+https://zhuanlan.zhihu.com/p/101184580
+
+docker 里面不能执行docker命令
+http://www.dockone.io/article/431

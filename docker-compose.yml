@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+#  web_gitlab:
+#    image: 'gitlab/gitlab-ce:latest'
+#    container_name: web_gitlab
+#    restart: always
+#    privileged: true
+#    hostname: '127.0.0.1'
+#    environment:
+#      GITLAB_OMNIBUS_CONFIG: |
+#        external_url 'http://127.0.0.1'
+#        gitlab_rails['smtp_enable'] = true
+#        gitlab_rails['smtp_address'] = "smtp.gmail.com"
+#        gitlab_rails['smtp_port'] = 587
+#        gitlab_rails['smtp_user_name'] = "markliu2012@gmail.com"
+#        gitlab_rails['smtp_password'] = "liu598768836"
+#        gitlab_rails['smtp_domain'] = "smtp.gmail.com"
+#        gitlab_rails['smtp_authentication'] = "login"
+#        gitlab_rails['smtp_enable_starttls_auto'] = true
+#        gitlab_rails['smtp_tls'] = false
+#        gitlab_rails['smtp_openssl_verify_mode'] = 'peer'
+#    ports:
+#      - '8088:80'
+#      - '8443:443'
+#      - '2224:22'
+#    volumes:
+#      - gitlab_conf:/etc/gitlab
+#      - gitlab_logs:/var/log/gitlab
+#      - gitlab_data:/var/opt/gitlab
+
+  web_jenkins:
+    image: 'jenkins/jenkins:latest'
+    container_name: web_jenkins
+    restart: always
+    user: root
+    privileged: true
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/bin/docker
+
+volumes:
+  gitlab_conf:
+  gitlab_logs:
+  gitlab_data:
+  jenkins_home:
